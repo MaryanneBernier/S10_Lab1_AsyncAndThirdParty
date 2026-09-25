@@ -20,7 +20,7 @@ namespace ZombieParty.Migrations
                 .HasAnnotation("ProductVersion", "6.0.16")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("HuntingLogZombie", b =>
                 {
@@ -34,7 +34,7 @@ namespace ZombieParty.Migrations
 
                     b.HasIndex("ZombiesId");
 
-                    b.ToTable("HuntingLogZombie");
+                    b.ToTable("HuntingLogZombie", (string)null);
                 });
 
             modelBuilder.Entity("ZombieParty.Models.HuntingLog", b =>
@@ -43,7 +43,7 @@ namespace ZombieParty.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -57,7 +57,7 @@ namespace ZombieParty.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("HuntingLogs");
+                    b.ToTable("HuntingLogs", (string)null);
                 });
 
             modelBuilder.Entity("ZombieParty.Models.Weapon", b =>
@@ -66,7 +66,7 @@ namespace ZombieParty.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WeaponId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WeaponId"));
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -97,7 +97,7 @@ namespace ZombieParty.Migrations
 
                     b.HasKey("WeaponId");
 
-                    b.ToTable("Weapons");
+                    b.ToTable("Weapons", (string)null);
 
                     b.HasData(
                         new
@@ -144,7 +144,7 @@ namespace ZombieParty.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Force")
                         .HasColumnType("int");
@@ -169,7 +169,7 @@ namespace ZombieParty.Migrations
 
                     b.HasIndex("ZombieTypeId");
 
-                    b.ToTable("Zombies");
+                    b.ToTable("Zombies", (string)null);
 
                     b.HasData(
                         new
@@ -333,7 +333,7 @@ namespace ZombieParty.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Point")
                         .HasColumnType("int");
@@ -345,7 +345,7 @@ namespace ZombieParty.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ZombieTypes");
+                    b.ToTable("ZombieTypes", (string)null);
 
                     b.HasData(
                         new
